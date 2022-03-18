@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
     <!-- google font link -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
@@ -38,8 +36,9 @@
 
             <div class="menu" id="appLogin">
 
-                <a href="NFT.html">NFT</a>
-                <a href="Crypto.html">Billetera</a>
+
+                <a href="nft.html">NFT</a>
+                <a href="crypto.html">Billetera</a>
                 <a href="DeFi.html">DeFi</a>
                 <a href="merchandising.html">Productos</a>
                 <a href="usuario.html">Usuario <i class="fas fa-user-alt"></i></a>
@@ -61,8 +60,7 @@
                         <h1 class="size5 bold spacebottom1">
                             Swap Tokens y Solicitiar Prestamos
                         </h1>
-                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del
-                            mercado.
+                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del mercado.
                         </p>
                         <br>
                         <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -99,12 +97,12 @@
                             <input class="input_btc" type="number" placeholder="Cantidad de BTC" v-model="btc">
                         </template>
                     </form>
-                   
-                        <select class="bg-purple white input_swap" class="spacer1 size2" required v-model="type">
+
+                    <select class="bg-purple white input_swap" class="spacer1 size2" required v-model="type">
                             <option  value="BTC_A_PESOS">BTC a pesos</option>
                             <option  value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
-                   
+
                     <template v-if="type == 'BTC_A_PESOS'">
                         <h2 class="spacebottom5">Recibiras: $ {{currency(btc*cotizacionBTCPesos)}} </h2>
                         <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
@@ -135,16 +133,14 @@
                     <br>
                     <div class="linea"></div>
 
-                    <label for="tipoPrestamo"><h2>Elija un tipo de prestamo</h2></label>                    
-                    <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo"
-                        aria-label="Default select example">
+                    <label for="tipoPrestamo"><h2>Elija un tipo de prestamo</h2></label>
+                    <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo" aria-label="Default select example">
                         <option v-for="prestamo in prestamos" v-cloak>{{prestamo.nombre}}</option>
                     </select>
                     <hr>
                     <br>
                     <label for="tipoPrestamo"><h2>Elige una opcion de cuotas</h2></label>
-                    <select v-model="cuotasASolicitar" class="form-select" name="tipoPrestamo"
-                        aria-label="Default select example">
+                    <select v-model="cuotasASolicitar" class="form-select" name="tipoPrestamo" aria-label="Default select example">
                         <option v-for="cuota in obtenerCuotas" v-cloak>{{cuota}}</option>
                     </select>
 
@@ -153,18 +149,18 @@
                     <h2>Interés Anual del préstamo: {{obtenerInteresPrestamo}} %</h2>
 
                 </div>
-                <div class="card-footer">        
-                    <br><br>            
-                    <button class="btn bg-purple size2 white nmcol12" type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>    
+                <div class="card-footer">
+                    <br><br>
+                    <button class="btn bg-purple size2 white nmcol12" type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>
                 </div>
-                
-                
+
+
             </div>
         </div>
         <!-- Loan End -->
 
         <!-- FAQ section starts -->
-    <!--     <section class="spacer10" id="faq">
+        <!--     <section class="spacer10" id="faq">
             <div class="container">
                 <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
                 <p class="spacebottom3 halfwhite size2 ta-center">
@@ -267,8 +263,7 @@
                     </div>
                 </div>
             </div>
-            <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> |
-                Todos los derechos reservados</p>
+            <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos los derechos reservados</p>
         </footer>
         <!-- footer section ends -->
     </div>
