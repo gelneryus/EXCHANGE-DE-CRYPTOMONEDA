@@ -86,6 +86,8 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			//usuario.setBilletera(billetera);
 			//billetera.setUsuario(usuario);
 			usuarioRepositorio.save(usuario);
+			//envio un correo de bienvenida al usuario nuevo registrado
+			emailSenderService.sendSimpleEmailTo(correo,"BIENVENIDO A RASPCASH :D","RASPCASH");
 
 			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera(),0.2,20000);
 			usuario.setBilletera(billetera);
